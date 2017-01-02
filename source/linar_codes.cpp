@@ -1,4 +1,5 @@
-#include <iostream>
+#include "../headers/matrix.h"
+#include "../headers/linar_codes.h"
 
 namespace betacore
 {
