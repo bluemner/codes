@@ -74,8 +74,8 @@ namespace betacore{
 	}
 	template <typename T>
 	void Matrix<T>::print(){
-		for(int i=0; i< this->_rows; ++i){
-			for(int j =0; j < this->_cols; ++j){
+		for(unsigned int i=0; i< this->_rows; ++i){
+			for(unsigned int j =0; j < this->_cols; ++j){
 				std::cout<<this->M[i][j]<<"\t";
 			}
 			std::cout<<std::endl;
@@ -85,10 +85,10 @@ namespace betacore{
 	template <typename T>
 	void Matrix<T>::transpose(){
 		T** transpose = new T*[this->_cols];
-		for (int j =0; j< this->_cols; ++j)
-		  transpose[j] = new T[this->_rows];
-		for(int i=0; i< this->_rows; ++i){
-			for(int j=0; j < this->_cols; ++j){
+		for (unsigned int j =0; j< this->_cols; ++j)
+			transpose[j] = new T[this->_rows];
+		for( unsigned int i=0; i< this->_rows; ++i){
+			for( unsigned int j=0; j < this->_cols; ++j){
 				transpose[j][i] = this->M[i][j];
 			}
 		}
@@ -115,11 +115,11 @@ namespace betacore{
 		}
 		T ** union_matrix = new T*[this->_rows];
 		size_t count = this->_cols+rhs._cols;
-		for(int i=0; i < this->_rows; ++i){
+		for(unsigned int i=0; i < this->_rows; ++i){
 			union_matrix[i]= new T[count];
 		}
-		for(int i=0; i < this->_rows; ++i){
-			for(int j=0; j<count; ++j){
+		for(unsigned int i=0; i < this->_rows; ++i){
+			for(unsigned int j=0; j<count; ++j){
 				union_matrix[i][j]= (j<this->_rows)? this->M[i][j] : rhs.M[i][j-this->_rows];
 			}
 		}
@@ -131,9 +131,9 @@ namespace betacore{
 	
 }//name-space
 
-/**
- *
+
 int main(int argc, char * argv[]){
+	
 	betacore::Matrix<double> matrix(3);
 	std::cout<<"___________________"<<std::endl;
 	std::cout<<"Matrix:["<<matrix.row_count()<<","<<matrix.col_count()<<"]"<<std::endl;
@@ -174,4 +174,3 @@ int main(int argc, char * argv[]){
 	std::cin>>x;
 	return 0;
 }
-*/

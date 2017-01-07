@@ -12,6 +12,17 @@
             "environment": [],
             "externalConsole": false
         },
+         {
+            "name": "Test (Windows)",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/bin/test.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceRoot}",
+            "environment": [],
+            "externalConsole": false
+        },
         {
             "name": "C++ Launch (Windows) Test",
             "type": "cppvsdbg",
