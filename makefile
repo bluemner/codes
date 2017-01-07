@@ -24,10 +24,11 @@ COMPILER = g++
 FLAGS =-W -ggdb -std=c++11
 OUTPUT_DIR = bin/
 SOURCE_DIR = source/
+HEADERS_DIR = headers/
 all: test
 	
 matrix: $(SOURCE_DIR)matrix.cpp
 	$(COMPILER) $(FLAGS) $(SOURCE_DIR)matrix.cpp -o $(OUTPUT_DIR)matrix.o
 
 test: $(SOURCE_DIR)test.cpp
-	$(COMPILER) $(FLAGS) $(SOURCE_DIR)matrix.cpp $(SOURCE_DIR)test.cpp  -o $(OUTPUT_DIR)main.o
+	$(COMPILER) $(FLAGS) $(HEADERS_DIR)matrix.hpp $(SOURCE_DIR)test.cpp  -o $(OUTPUT_DIR)test.o
